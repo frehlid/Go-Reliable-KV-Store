@@ -59,7 +59,7 @@ NewLogger creates a new logger.
 @param topicMap: A map of enums to strings that can be printed as "sub-topics" in the log messages.
 */
 func NewLogger(loggerId int, shouldLog bool, serverPrefix string, topicMap map[int]string) *Logger {
-	loggingOverride, ok := os.LookupEnv("CPSC_416_LOGGER_OVERRIDE")
+	loggingOverride, ok := os.LookupEnv("LOGGER_OVERRIDE")
 	if ok {
 		shouldLog = loggingOverride == "true"
 	}
